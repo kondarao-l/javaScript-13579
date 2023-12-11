@@ -10,7 +10,7 @@ const cities = [
   },
   {
     id:2 ,
-    name:'Hyd'
+    name:'vijayavaaadssaln'
   },
   {
     id:3 ,
