@@ -20,10 +20,7 @@ const cities = [
     id: 4,
     name:'guntur'
   },
-  {
-    id: 5,
-    name:'ongole'
-  }
+ 
 ]
 function App() {
   
