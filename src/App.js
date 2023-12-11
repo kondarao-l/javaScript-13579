@@ -23,7 +23,13 @@ const cities = [
   {
     id: 5,
     name:'ongole'
-  }
+  },
+  {
+    id: 6,
+    name:'kakinada'
+  },
+
+
 ]
 function App() {
   
