@@ -1,70 +1,44 @@
-
-import './App.css';
-import { useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 
-const cities = [
-  {
-    id:1,
-    name:'Hyd'
-  },
-  {
-    id:2 ,
-    name:'Vizag'
-  },
-  {
-    id:3 ,
-    name:'tirupati'
-  },
-  {
-    id: 4,
-    name:'guntur'
-  },
- 
-  {
-    id: 6,
-    name:'kakinada'
-  },
 
 
-]
 function App() {
+
+  const data = useRef(null)
+  const submitHandler = (e) => {
+    e.preventDefault()
+    console.log(data.current.value)
+  }
+
+  useEffect (() => {
+    data.current.focus()
+  },[])
   
- 
-  const [data, setData] = useState('')
-  const changeHandler = e => {
-    setData(e.target.value)
-  }
-  const submitHandler = e => {
-    e.preventDefault()
-    setData(data)
-    //console.log(data)
-  }
-  const buttonHnadler = (e) => {
-    e.preventDefault()
-    console.log(data)
-  }
   return (
-    <div>
+
+    <div> 
       <center>
-        <h1>Introduction</h1>
-
-        <form onSubmit={submitHandler}>
-          <input type='text' value={data}  onChange={changeHandler} />
-         <input type='submit'/>
+         <form onSubmit={submitHandler}>
+        <input type='text' ref={data} placeholder='enter text'/>
+        <input type='submit'/> 
         </form>
-
-        {cities.filter(eachCity=>eachCity.name.toLowerCase().includes(data)).map(eachCity=>(
-        <div key={eachCity.id} onClick={buttonHnadler}>
-       {eachCity.name}
-        </div>
-          ))}
-
-      
-
+        
       </center>
     </div>
   )
 }
 
-export default App;
+export default App
+
+
+/*
+ <store.Provider value={[data,setData]}>
+          <h1>Context API</h1>
+          <Component1 />
+          <Component2 />
+          
+
+        </store.Provider>
+
+*/
